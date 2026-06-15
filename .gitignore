@@ -1,0 +1,11 @@
+# Raw KJV download (reproducible via scripts/parse_kjv.py)
+kjv-full.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
