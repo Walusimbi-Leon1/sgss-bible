@@ -59,7 +59,7 @@ and replenish the earth, and subdue it: and have dominion over the fish of the s
 and over the fowl of the air, and over every living thing that moves upon the earth.
 29 God said, Behold, I have given you every herb bearing seed,
 which is upon the face of all the earth, and every tree,
-in the which is the fruit of a tree yielding seed; to you it shall be for meat.
+in which is the fruit of a tree yielding seed; to you it shall be for meat.
 30 To every beast of the earth, and to every fowl of the air,
 and to every thing that creeps upon the earth, wherein there is life,
 I have given every green herb for meat: and it was so.
@@ -999,7 +999,7 @@ and I cannot escape to the mountain, lest some evil take me, and I die:
 20 Behold now, this city is near to flee unto, and it is a little one: Oh,
 let me escape there, (is it not a little one?) and my soul shall live.
 21 He said unto him, See, I have accepted you concerning this thing also,
-that I will not overthrow this city, for the which you have spoken.
+that I will not overthrow this city, for which you have spoken.
 22 Haste you, escape there; for I cannot do anything till you be come there.
 Therefore the name of the city was called Zoar.
 23 The sun was risen upon the earth when Lot entered into Zoar.
@@ -1012,8 +1012,8 @@ and that which grew upon the ground.
 28 He looked toward Sodom and Gomorrah, and toward all the land of the plain, and beheld,
 and, lo, the smoke of the country went up as the smoke of a furnace.
 29 When God destroyed the cities of the plain, that God remembered Abraham,
-and sent Lot out of the midst of the overthrow, when he overthrew the cities in the which
-Lot lived.
+and sent Lot out of the midst of the overthrow, when he overthrew the cities in which Lot
+lived.
 30 Lot went up out of Zoar, and lived in the mountain, and his two daughters with him;
 for he feared to live in Zoar: and he lived in a cave, he and his two daughters.
 31 The firstborn said unto the younger, Our father is old,
@@ -1057,7 +1057,7 @@ and all that are your.
 and told all these things in their ears: and the men were sore afraid.
 9 Then Abimelech called Abraham, and said unto him, What have you done unto us?
 and what have I offended you, that you have brought on me and on my kingdom a great sin?
-you have done deeds unto me that ought not to be done.
+you have done deeds unto me that owed not to be done.
 10 Abimelech said unto Abraham, What saw you, that you have done this thing?
 11 Abraham said, Because I thought, Surely the fear of God is not in this place;
 and they will kill me for my wife’s sake.
@@ -1246,8 +1246,8 @@ Chapter 24
 
 1 Abraham was old, and well stricken in age: and the LORD had blessed Abraham in all
 things.
-2 Abraham said unto his eldest servant of his house, that ruled over all that he had,
-Put, please, your hand under my thigh:
+2 Abraham said unto his eld servant of his house, that ruled over all that he had, Put,
+please, your hand under my thigh:
 3 I will make you swear by the LORD, the God of heaven, and the God of the earth,
 that you shall not take a wife unto my son of the daughters of the Canaanites,
 among whom I live:
@@ -1544,7 +1544,7 @@ Hittite, and Bashemath the daughter of Elon the Hittite:
 Chapter 27
 
 1 That when Isaac was old, and his eyes were dim, so that he could not see,
-he called Esau his eldest son, and said unto him, My son: and he said unto him, Behold,
+he called Esau his eld son, and said unto him, My son: and he said unto him, Behold,
 here am I.
 2 He said, Behold now, I am old, I know not the day of my death:
 3 Now therefore take, please, your weapons, your quiver and your bow,
@@ -1570,7 +1570,7 @@ and I shall bring a curse upon me, and not a blessing.
 and go fetch me them.
 14 He went, and fetched, and brought them to his mother: and his mother made savoury
 meat, such as his father loved.
-15 Rebekah took goodly clothing of her eldest son Esau, which were with her in the house,
+15 Rebekah took goodly clothing of her eld son Esau, which were with her in the house,
 and put them upon Jacob her younger son:
 16 She put the skins of the kids of the goats upon his hands,
 and upon the smooth of his neck:
@@ -2097,9 +2097,9 @@ in the field: and Jacob held his peace until they were come.
 6 Hamor the father of Shechem went out unto Jacob to commune with him.
 7 The sons of Jacob came out of the field when they heard it: and the men were grieved,
 and they were very angry, because he had wrought folly in Israel in lying with Jacob’s
-daughter: which thing ought not to be done.
-8 Hamor communed with them, saying, The soul of my son Shechem longs for for your
-daughter: please give her him to wife.
+daughter: which thing owed not to be done.
+8 Hamor communed with them, saying, The soul of my son Shechem longs for your daughter:
+please give her him to wife.
 9 Make you marriages with us, and give your daughters unto us,
 and take our daughters unto you.
 10 You shall live with us: and the land shall be before you;
@@ -2443,7 +2443,7 @@ house, and all that he had he put into his hand.
 5 From the time that he had made him overseer in his house, and over all that he had,
 that the LORD blessed the Egyptian’s house for Joseph’s sake;
 and the blessing of the LORD was upon all that he had in the house, and in the field.
-6 He left all that he had in Joseph’s hand; and he knew not ought he had,
+6 He left all that he had in Joseph’s hand; and he knew not owed he had,
 save the bread which he did eat. And Joseph was a goodly person, and well favoured.
 7 After these things, his master’s wife cast her eyes upon Joseph;
 and she said, Lie with me.
@@ -2724,7 +2724,7 @@ and Simeon is not, and you will take Benjamin away: all these things are against
 if I bring him not to you: deliver him into my hand,
 and I will bring him to you again.
 38 He said, My son shall not go down with you; for his brother is dead,
-and he is left alone: if mischief befall him by the way in the which you go,
+and he is left alone: if mischief befall him by the way in which you go,
 then shall you bring down my gray hairs with sorrow to the grave.
 
 Chapter 43
@@ -2825,8 +2825,8 @@ and we also will be my lord’s bondmen.
 be my servant; and you shall be blameless.
 11 Then they speedily took down every man his sack to the ground,
 and opened every man his sack.
-12 He searched, and began at the eldest, and left at the youngest: and the cup was found
-in Benjamin’s sack.
+12 He searched, and began at the eld, and left at the youngest: and the cup was found in
+Benjamin’s sack.
 13 Then they rent their clothes, and laded every man his ass,
 and returned to the city.
 14 Judah and his brethren came to Joseph’s house; for he was yet there: and they fell
@@ -2887,7 +2887,7 @@ And he said, I am Joseph your brother, whom you sold into Egypt.
 5 Now therefore be not grieved, nor angry with yourselves,
 that you sold me here: for God did send me before you to preserve life.
 6 For these two years has the famine been in the land: and yet there are five years,
-in the which there shall neither be earing nor harvest.
+in which there shall neither be earing nor harvest.
 7 God sent me before you to preserve you a posterity in the earth,
 and to save your lives by a great deliverance.
 8 So now it was not you that sent me here, but God: and he has made me a father to
@@ -3048,7 +3048,7 @@ horses, and for the flocks, and for the cattle of the herds,
 and for the asses: and he fed them with bread for all their cattle for that year.
 18 When that year was ended, they came unto him the second year, and said unto him,
 We will not hide it from my lord, how that our money is spent;
-my lord also has our herds of cattle; there is not ought left in the sight of my lord,
+my lord also has our herds of cattle; there is not owed left in the sight of my lord,
 but our bodies, and our lands:
 19 Wherefore shall we die before your eyes, both we and our land?
 buy us and our land for bread, and we and our land will be servants unto Pharaoh: and
@@ -3163,7 +3163,7 @@ he couched as a lion, and as an old lion; who shall rouse him up?
 until Shiloh come; and unto him shall the gathering of the people be.
 11 Binding his foal unto the vine, and his ass’s colt unto the choice vine;
 he washed his garments in wine, and his clothes in the blood of grapes:
-12 His eyes shall be red with wine, and his teeth white with milk.
+12 His eyes shall be red with wine, and his tes white with milk.
 13 Zebulun shall live at the haven of the sea; and he shall be for an haven of ships;
 and his border shall be unto Zidon.
 14 Issachar is a strong ass couching down between two burdens:
