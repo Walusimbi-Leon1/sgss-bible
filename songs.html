@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGSS Bible Songs — Lyrics for Music Generation</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Browse all 1,603 SGSS Bible song lyrics — formatted for Suno AI and music generation tools.">
+    <style>
+        :root { --song-accent: #2a7a62; --song-glow: #3a9a7a; }
+        .songs-header { background: linear-gradient(135deg, #1a4a3a, #2a7a62); border-bottom-color: var(--song-glow); }
+
+        .nav-tabs { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
+        .nav-tab { display: inline-block; padding: 0.4rem 1rem; background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; border-radius: 20px; font-size: 0.85rem; transition: background 0.2s; }
+        .nav-tab:hover { background: rgba(255,255,255,0.25); }
+        .nav-tab.active { background: var(--song-glow); }
+
+        .search-section { margin: 1.5rem 0; }
+        .search-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .search-bar input {
+            flex: 1; min-width: 200px; padding: 0.7rem 1rem; border: 2px solid var(--border);
+            border-radius: 6px; font-size: 1rem; font-family: inherit; background: var(--card-bg);
+            transition: border-color 0.2s;
+        }
+        .search-bar input:focus { outline: none; border-color: var(--song-accent); }
+        .search-bar select {
+            padding: 0.7rem 1rem; border: 2px solid var(--border); border-radius: 6px;
+            font-size: 0.95rem; font-family: inherit; background: var(--card-bg); cursor: pointer;
+        }
+        .search-stats { margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-light); }
+        .search-stats strong { color: var(--song-accent); }
+
+        .songs-list { margin-top: 1rem; }
+        .song-item {
+            background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px;
+            margin-bottom: 0.4rem; overflow: hidden;
+        }
+        .song-head {
+            display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1rem;
+            cursor: pointer; transition: background 0.15s;
+        }
+        .song-head:hover { background: #f8f6f2; }
+        .song-head .snum { font-weight: bold; color: var(--song-accent); font-size: 0.8rem; min-width: 3.5rem; }
+        .song-head .sref { flex: 1; font-size: 0.95rem; }
+        .song-head .sauthor { font-size: 0.8rem; color: var(--text-light); font-style: italic; }
+        .song-head .sarrow { transition: transform 0.2s; font-size: 0.75rem; color: var(--text-light); }
+        .song-head.open .sarrow { transform: rotate(180deg); }
+
+        .song-body { display: none; border-top: 1px solid var(--border); padding: 0 1rem 1rem; background: #fcfaf7; }
+        .song-body.open { display: block; }
+        .song-body .meta {
+            display: flex; flex-wrap: wrap; gap: 0.3rem 1.5rem; padding: 0.6rem 0;
+            font-size: 0.8rem; color: var(--text-light);
+        }
+        .song-body .meta .label { color: #888; }
+        .song-body .lyrics {
+            font-family: 'Georgia', 'Times New Roman', serif; font-size: 0.95rem;
+            line-height: 1.8; padding: 0.5rem 0; white-space: pre-wrap; color: #2a2a2a;
+        }
+        .copy-btn {
+            display: inline-block; padding: 0.35rem 0.9rem; background: var(--song-accent);
+            color: #fff; border: none; border-radius: 4px; font-size: 0.8rem;
+            cursor: pointer; transition: background 0.2s; font-family: inherit;
+        }
+        .copy-btn:hover { background: var(--song-glow); }
+        .copy-btn.copied { background: #27ae60; }
+
+        .status { text-align: center; padding: 3rem 1rem; color: var(--text-light); }
+        .spinner {
+            display: inline-block; width: 2rem; height: 2rem;
+            border: 3px solid var(--border); border-top-color: var(--song-accent);
+            border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 1rem;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .status.error { color: var(--accent); }
+        .no-results { text-align: center; padding: 3rem 1rem; color: var(--text-light); }
+
+        @media (max-width: 600px) {
+            .search-bar input, .search-bar select { width: 100%; }
+            .song-head { flex-wrap: wrap; gap: 0.3rem; }
+            .song-head .snum { min-width: auto; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header songs-header">
+    <h1><a href="index.html" style="color:#fff;text-decoration:none;">🎵 SGSS Bible Songs</a></h1>
+    <p class="subtitle">Lyrics for Music Generation — <i>based on the Simplified God's Sacred Scriptures</i></p>
+    <nav class="nav-tabs">
+        <a href="index.html" class="nav-tab">📖 Bible</a>
+        <a href="songs.html" class="nav-tab active">🎵 Songs</a>
+        <a href="sgss-bible-songs.txt" class="nav-tab" download>⬇️ Download TXT</a>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="search-section">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by book, chapter, lyrics, or author..." autocomplete="off">
+            <select id="bookFilter"><option value="">All Books</option></select>
+        </div>
+        <div class="search-stats" id="stats"></div>
+    </div>
+    <div class="songs-list" id="songsList">
+        <div class="status"><div class="spinner"></div><p>Loading SGSS Bible Songs...</p></div>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <p>SGSS Bible Songs — Based on the Simplified God's Sacred Scriptures. Public Domain (CC0).</p>
+    <p>Created for use with Suno AI and other music generation tools.</p>
+</footer>
+
+<script>
+(async function() {
+    const listEl = document.getElementById('songsList');
+    const searchInput = document.getElementById('searchInput');
+    const bookFilter = document.getElementById('bookFilter');
+    const statsEl = document.getElementById('stats');
+
+    let songs = [];
+
+    // ─── Parse txt file ───
+    async function loadSongs() {
+        const resp = await fetch('sgss-bible-songs.txt');
+        if (!resp.ok) throw new Error('Failed to load songs file');
+        const text = await resp.text();
+
+        const result = [];
+        const lines = text.split('\n');
+        let cur = null;
+        let inHeader = true;
+        let afterRef = false;
+
+        for (const raw of lines) {
+            const line = raw.trim();
+            if (inHeader) {
+                if (line.startsWith('Song ')) inHeader = false;
+                else continue;
+            }
+
+            const songMatch = line.match(/^Song (\d+)$/);
+            if (songMatch) {
+                if (cur) result.push(cur);
+                cur = { num: parseInt(songMatch[1]), version:'', date:'', desc:'', composer:'', writer:'', creator:'', ref:'', lyrics:'', book:'', chapter:0 };
+                afterRef = false;
+                continue;
+            }
+            if (!cur) continue;
+
+            if (line.startsWith('Version ')) { cur.version = line.replace('Version ',''); continue; }
+            if (line.startsWith('Date: ')) { cur.date = line.replace('Date: ',''); continue; }
+            if (line.startsWith('Description: ')) { cur.desc = line.replace('Description: ',''); continue; }
+            if (line.startsWith('Composed by: ')) { cur.composer = line.replace('Composed by: ',''); continue; }
+            if (line.startsWith('Written by: ')) { cur.writer = line.replace('Written by: ',''); continue; }
+            if (line.startsWith('Created by: ')) { cur.creator = line.replace('Created by: ',''); continue; }
+
+            if (!afterRef && line && !line.startsWith('Version') && !line.startsWith('Date:') && !line.startsWith('Description:') && !line.startsWith('Composed by:') && !line.startsWith('Written by:') && !line.startsWith('Created by:')) {
+                cur.ref = line;
+                const bk = line.match(/^(.+?)\s+(\d+)/);
+                if (bk) { cur.book = bk[1].trim(); cur.chapter = parseInt(bk[2]); }
+                afterRef = true;
+                continue;
+            }
+
+            if (afterRef) {
+                cur.lyrics += (cur.lyrics ? '\n' : '') + line;
+            }
+        }
+        if (cur) result.push(cur);
+        return result;
+    }
+
+    // ─── Populate book filter ───
+    function extractBooks(songs) {
+        const books = [];
+        const seen = new Set();
+        for (const s of songs) {
+            if (s.book && !seen.has(s.book)) {
+                seen.add(s.book);
+                books.push(s.book);
+            }
+        }
+        // Sort by canonical order using the file's natural order
+        return books;
+    }
+
+    // ─── Render ───
+    function render(filtered) {
+        if (filtered.length === 0) {
+            listEl.innerHTML = '<div class="no-results"><p style="font-size:2rem;margin-bottom:0.5rem;">🔍</p><p>No songs match your search.</p></div>';
+            statsEl.innerHTML = `0 songs`;
+            return;
+        }
+
+        // Group by book preserving order
+        const groups = [];
+        const seen = new Set();
+        for (const s of filtered) {
+            if (!seen.has(s.book)) {
+                seen.add(s.book);
+                groups.push({ book: s.book, songs: [] });
+            }
+        }
+        // Map book -> group
+        const groupMap = {};
+        for (const g of groups) groupMap[g.book] = g;
+        for (const s of filtered) {
+            if (groupMap[s.book]) groupMap[s.book].songs.push(s);
+        }
+
+        let html = '';
+        for (const g of groups) {
+            if (g.songs.length === 0) continue;
+            const firstNum = g.songs[0].num;
+            const lastNum = g.songs[g.songs.length-1].num;
+            html += `<div class="song-item" style="background:var(--bg);border-radius:6px;margin-bottom:0.75rem;">`;
+            html += `<div class="song-head" onclick="toggleGroup(this)" style="font-weight:bold;color:var(--primary);font-size:1.05rem;cursor:pointer;background:var(--card-bg);border:1px solid var(--border);border-radius:6px;padding:0.7rem 1rem;display:flex;align-items:center;gap:0.5rem;">`;
+            html += `<span class="sarrow" style="font-size:0.75rem;">▶</span>`;
+            html += `<span>📖 ${g.book}</span>`;
+            html += `<span style="margin-left:auto;font-weight:normal;font-size:0.8rem;color:var(--text-light);background:var(--bg);padding:0.15rem 0.6rem;border-radius:10px;">${g.songs.length} song${g.songs.length !== 1 ? 's' : ''} (Song ${firstNum}–${lastNum})</span>`;
+            html += `</div>`;
+            html += `<div class="song-body open" style="display:block;">`;
+
+            for (const s of g.songs) {
+                html += `<div class="song-item" style="margin-bottom:0.3rem;">`;
+                html += `<div class="song-head" onclick="toggleSong(this)" data-num="${s.num}">`;
+                html += `<span class="snum">#${s.num}</span>`;
+                html += `<span class="sref">${s.ref}</span>`;
+                html += `<span class="sauthor">${s.composer}</span>`;
+                html += `<span class="sarrow">▼</span>`;
+                html += `</div>`;
+                html += `<div class="song-body">`;
+                html += `<div class="meta">`;
+                if (s.desc) html += `<span><span class="label">About:</span> ${escHtml(s.desc)}</span>`;
+                html += `<span><span class="label">Writer:</span> ${escHtml(s.writer)}</span>`;
+                html += `<span><span class="label">Creator:</span> ${escHtml(s.creator)}</span>`;
+                html += `<span><span class="label">Date:</span> ${s.date}</span>`;
+                html += `</div>`;
+                html += `<button class="copy-btn" onclick="copyLyrics(this, ${s.num})">📋 Copy Lyrics</button>`;
+                html += `<div class="lyrics">${escHtml(s.lyrics)}</div>`;
+                html += `</div>`;
+                html += `</div>`;
+            }
+
+            html += `</div></div>`;
+        }
+
+        listEl.innerHTML = html;
+        const totalFiltered = filtered.length;
+        const totalAll = songs.length;
+        statsEl.innerHTML = totalFiltered === totalAll
+            ? `<strong>${totalAll}</strong> songs across <strong>${groups.length}</strong> books`
+            : `<strong>${totalFiltered}</strong> of <strong>${totalAll}</strong> songs (<strong>${groups.length}</strong> books)`;
+    }
+
+    function escHtml(s) {
+        const d = document.createElement('div');
+        d.textContent = s;
+        return d.innerHTML;
+    }
+
+    // ─── Toggle functions (global) ───
+    window.toggleSong = function(el) {
+        const body = el.nextElementSibling;
+        const isOpen = body.classList.contains('open');
+        body.classList.toggle('open');
+        el.classList.toggle('open');
+    };
+
+    window.toggleGroup = function(el) {
+        const body = el.nextElementSibling;
+        const isOpen = body.classList.contains('open');
+        body.classList.toggle('open');
+        el.querySelector('.sarrow').textContent = isOpen ? '▶' : '▼';
+    };
+
+    window.copyLyrics = async function(btn, num) {
+        const s = songs.find(s => s.num === num);
+        if (!s) return;
+        const text = s.ref + '\n\n' + s.lyrics;
+        try {
+            await navigator.clipboard.writeText(text);
+            btn.textContent = '✅ Copied!';
+            btn.classList.add('copied');
+            setTimeout(() => { btn.textContent = '📋 Copy Lyrics'; btn.classList.remove('copied'); }, 2000);
+        } catch {
+            // Fallback
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            ta.remove();
+            btn.textContent = '✅ Copied!';
+            btn.classList.add('copied');
+            setTimeout(() => { btn.textContent = '📋 Copy Lyrics'; btn.classList.remove('copied'); }, 2000);
+        }
+    };
+
+    // ─── Filter ───
+    function filterSongs() {
+        const q = searchInput.value.toLowerCase().trim();
+        const bk = bookFilter.value;
+        let filtered = songs;
+        if (bk) filtered = filtered.filter(s => s.book === bk);
+        if (q) {
+            filtered = filtered.filter(s =>
+                s.ref.toLowerCase().includes(q) ||
+                s.lyrics.toLowerCase().includes(q) ||
+                s.composer.toLowerCase().includes(q) ||
+                s.desc.toLowerCase().includes(q)
+            );
+        }
+        render(filtered);
+    }
+
+    // ─── Init ───
+    try {
+        songs = await loadSongs();
+        const books = extractBooks(songs);
+
+        // Populate filter
+        for (const b of books) {
+            const opt = document.createElement('option');
+            opt.value = b;
+            opt.textContent = b;
+            bookFilter.appendChild(opt);
+        }
+
+        render(songs);
+
+        searchInput.addEventListener('input', filterSongs);
+        bookFilter.addEventListener('change', filterSongs);
+    } catch (err) {
+        listEl.innerHTML = `<div class="status error"><p style="font-size:2.5rem;margin-bottom:0.5rem;">⚠️</p><p>Failed to load songs file.</p><p style="font-size:0.85rem;margin-top:0.5rem;color:#888;">${err.message}</p></div>`;
+    }
+})();
+</script>
+</body>
+</html>
