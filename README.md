@@ -2,6 +2,11 @@
 
 **SGSS** (Simplified God's Sacred Scriptures) is an open-source adaptation of the King James Version (KJV) Bible into **simple, easy-to-understand English**.
 
+## 🌐 Website & Download
+
+- **Read online:** [walusimbi-leon1.github.io/sgss-bible](https://walusimbi-leon1.github.io/sgss-bible/) — browse all 66 books by chapter
+- **Download PDF:** [sgss-bible.pdf](https://walusimbi-leon1.github.io/sgss-bible/sgss-bible.pdf) (~4.4 MB, full Bible for offline reading)
+
 ## About This Project
 
 The King James Version is a beautiful but **archaic** translation — full of "thee," "thou," "hast," and complex sentence structures that can be difficult for modern readers. **SGSS** takes the KJV as its source text and **rewrites each verse into clear, straightforward English** while preserving the original meaning, structure, and intent.
@@ -13,6 +18,10 @@ sgss-bible/
 ├── README.md           ← You are here
 ├── LICENSE             ← CC0 — public domain
 ├── CONTRIBUTING.md     ← How to help
+├── index.html          ← Website homepage
+├── styles.css          ← Website styling
+├── books/              ← Individual book pages (all 66 books)
+├── sgss-bible.pdf      ← Full Bible PDF for download (~4.4 MB)
 ├── scripts/
 │   └── parse_kjv.py    ← KJV source parser
 ├── kjv/                ← KJV source text (raw material)
